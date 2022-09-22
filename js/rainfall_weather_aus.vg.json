@@ -4,34 +4,34 @@
     "height": 600,
     "title": "Total Rainfall in Australia Between December 2008 and April 2009",
     "projection": {
-        "type":"equalEarth"
+        "type":"identity"
     },
     "layer": [
         {
             "data": {
                 "url": "https://raw.githubusercontent.com/hongjchang/Week9Homework/main/js/ne_50m.topojson",
-                "format": {"type": "topojson", "feature": "ne_50m"}
+                "format": {"type": "topojson", "feature": "ne_50m_ocean"}
             },
             "mark": {"type": "geoshape", "fill": "lightgrey", "stroke": "white"}
         },
         {
             "data": {
-                "url": "https://raw.githubusercontent.com/hongjchang/Week9Homework/main/datasets/weatherAUS_lesserDataForHomework.csv"
+                "url": "https://github.com/hongjchang/Week9Homework/raw/main/datasets/weatherAUS_lesserDataForHomework.csv"
             },
             "mark": {"type": "circle", "tooltip": {"content": "data"}},
             "encoding": {
                 "longitude": {"field": "longitude", "type": "quantitative"},
                 "latitude": {"field": "latitude", "type": "quantitative"},
                 "size": {
-                  "field": "mag",
+                  "field": "Rainfall",
                   "type": "quantitative",
-                  "title": "Magnitude (Richter scale)",
+                  "title": "Rainfall (mm)",
                   "scale": {"domain": [4, 8]}
                 },
                 "color": {
-                  "field": "depth",
-                  "type": "quantitative",
-                  "title": "Depth in km",
+                  "field": "Location",
+                  "type": "nominal",
+                  "title": "Location (State)",
                   "scale": {"scheme": "reds"}
                 }
             }
