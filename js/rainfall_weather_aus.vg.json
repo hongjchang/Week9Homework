@@ -1,0 +1,41 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 800,
+    "height": 600,
+    "title": "Total Rainfall in Australia Between December 2008 and April 2009",
+    "projection": {
+        "type":"equalEarth"
+    },
+    "layer": [
+        {
+            "data": "js/ne_50m.topojson",
+            "format": {
+                "type": "topojson",
+                "feature": "ne_50m"
+            },
+            "mark": {"type": "geoshape", "fill": "lightgray", "stroke": "white"}
+        },
+        {
+            "data": {
+              "url": "datasets/weatherAUS_lesserDataForHomework.csv"
+            },
+            "mark": {"type": "point", "tooltip": {"content": "data"}},
+            "encoding": {
+              "longitude": {"field": "longitude", "type": "quantitative"},
+              "latitude": {"field": "latitude", "type": "quantitative"},
+              "size": {
+                "field": "mag",
+                "type": "quantitative",
+                "title": "Magnitude (Richter scale)",
+                "scale": {"domain": [4, 8]}
+              },
+              "color": {
+                "field": "depth",
+                "type": "quantitative",
+                "title": "Depth in km",
+                "scale": {"scheme": "reds"}
+              }
+            }
+          }
+    ]
+}

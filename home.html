@@ -1,0 +1,37 @@
+<!--
+    Name: HongJie Chang
+    Date: 22/09/2022
+    Purpose: A home page for the map created in Week9Homework
+    Acknowledgement: This file, vega JSON file and style.css file are created in reference to Week 7 Studio Part B Section 3 Solution files.
+
+    NOTE:
+    This dataset is used instead of the weatherAUS.csv because in Week9Homework instructions file says to use simpler dataset. Hence, 150 records are used here rather than 100K records in the original file.
+-->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+
+    <!-- CSS file -->
+    <link rel="stylesheet" type="text/css" href="cssFiles/style.css" media="all">
+
+</head>
+
+<body>
+    <h1>Total Rainfall in Australia Between December 2008 and April 2009</h1>
+
+    <div id="visualisation"></div>
+
+    <script type="text/javascript">
+        var spec2 = "js/rainfall_weather_aus.vg.json"
+
+        vegaEmbed('#visualisation', spec2).then(function(result) {
+        }).catch(console.error);
+    </script>
+
+</body>
+
+</html>
