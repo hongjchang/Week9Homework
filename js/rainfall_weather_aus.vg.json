@@ -4,7 +4,7 @@
     "height": 600,
     "title": "Total Rainfall in Australia Between December 2008 and April 2009",
     "projection": {
-        "type":"identity"
+        "type":"equirectangular"
     },
     "layer": [
         {
@@ -12,7 +12,7 @@
                 "url": "https://raw.githubusercontent.com/hongjchang/Week9Homework/main/js/ne_50m.topojson",
                 "format": {"type": "topojson", "feature": "ne_50m_ocean"}
             },
-            "mark": {"type": "geoshape", "fill": "lightgrey", "stroke": "white"}
+            "mark": {"type": "geoshape", "stroke": "white"}
         },
         {
             "data": {
@@ -33,7 +33,12 @@
                   "type": "nominal",
                   "title": "Location (State)",
                   "scale": {"scheme": "reds"}
-                }
+                },
+                "tooltip": [
+                    {"field": "Date", "type": "nominal", "title": "Date"},
+                    {"field": "Location", "type": "ordinal"},
+                    {"field": "Rainfall", "type": "quantitative"}
+                  ]
             }
         }
     ]
