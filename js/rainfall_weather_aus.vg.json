@@ -6,58 +6,50 @@
     "projection": {
         "type":"equirectangular"
     },
-    "transform": [
-        {
-          "lookup": "properties.NAME",
-          "from": {
-            "data": {
-                "url": "datasets/weatherAUS_copy.csv"
-            },
-            "key": "Location",
-            "fields": ["Rainfall"]
-          }
-        },
-        {"calculate": "datum.Rainfall + 0.1", "as": "Daily Rainfall"}
-    ],
     "layer": [
         {
             "data": {
-                "url": "js/ne_50m_ocean.topojson",
+                "url": "https://raw.githubusercontent.com/hongjchang/Week9Homework/main/js/ne_50m_ocean.topojson",
                 "format": {"type": "topojson", "feature": "ne_50m_ocean"}
             },
             "mark": {"type": "geoshape", "stroke": "white"}
         },
         {
             "data": {
-                "url": "js/ne_50m_coastline.topojson",
-                "format": {"type": "topojson", "feature": "ne_50m_coastline"}
-            },
-            "mark": {"type": "geoshape", "stroke": "white"}
-        },
-        {
-            "data": {
-                "url": "js/ne_50m_land.topojson",
+                "url": "https://raw.githubusercontent.com/hongjchang/Week9Homework/main/js/ne_50m_land.topojson",
                 "format": {"type": "topojson", "feature": "ne_50m_land"}
             },
             "mark": {"type": "geoshape", "stroke": "white"}
         },
         {
             "data": {
-                "url": "js/ne_50m_admin_1_states_provinces.topojson",
+                "url": "https://raw.githubusercontent.com/hongjchang/Week9Homework/main/js/ne_50m_coastline.topojson",
+                "format": {"type": "topojson", "feature": "ne_50m_coastline"}
+            },
+            "mark": {"type": "geoshape", "stroke": "white"}
+        },
+        {
+            "data": {
+                "url": "https://raw.githubusercontent.com/hongjchang/Week9Homework/main/js/ne_50m_admin_1_states_provinces.topojson",
                 "format": {"type": "topojson", "feature": "ne_50m_admin_1_states_provinces"}
             },
             "mark": {"type": "geoshape", "stroke": "lightgrey", "fill": "white"}
         },
         {
             "data": {
-                "url": "js/ne_50m_graticules_30.topojson",
+                "url": "https://raw.githubusercontent.com/hongjchang/Week9Homework/main/js/ne_50m_graticules_30.topojson",
                 "format": {"type": "topojson", "feature": "ne_50m_graticules_30"}
             },
-            "mark": {"type": "geoshape", "stroke": "white", "strokeOpacity": 0.5}
+            "mark": {"type": "geoshape", "stroke": "lightgrey", "strokeOpacity": 0.4}
         },
         {
+            "data": {
+                "url": "https://raw.githubusercontent.com/hongjchang/Week9Homework/main/datasets/weatherAUS_lesserDataForHomework.csv"
+            },
             "mark": {"type": "circle", "tooltip": {"content": "data"}},
             "encoding": {
+                "longitude": {"field": "Lon", "type": "quantitative"},
+                "latitude": {"field": "Lat", "type": "quantitative"},
                 "size": {
                     "field": "Rainfall",
                     "type": "quantitative",
@@ -71,18 +63,16 @@
                     "type": "nominal",
                     "title": "Location (State)",
                     "scale": {
-                    "scheme": "reds",
-                    "domain": [
-                            "Australian Capital Territory", "New South Wales", "Northern Territory", "Queensland", "Southern Australia", "Tasmania", "Victoria", "Western Australia"
-                    ],
-                    "range": [
-                        "#b2182b","#d6604d","#f4a582","#fddbc7","#d1e5f0","#92c5de","#4393c3","#2166ac"
-                    ]
+                        "scheme": "reds",
+                        "domain": [
+                                "Australian Capital Territory", "New South Wales", "Northern Territory", "Queensland", "Southern Australia", "Tasmania", "Victoria", "Western Australia"
+                        ],
+                        "range": [
+                            "#b2182b","#d6604d","#f4a582","#fddbc7","#d1e5f0","#92c5de","#4393c3","#2166ac"
+                        ]
                     }
                 },
                 "tooltip": [
-                    {"field": "Month", "type": "quantitative", "title": "Month"},
-                    {"field": "Year", "type": "quantitative", "title": "Year"},
                     {"field": "Location", "type": "ordinal"},
                     {"field": "Rainfall", "type": "quantitative"}
                 ]
