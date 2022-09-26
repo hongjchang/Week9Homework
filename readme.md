@@ -7,9 +7,10 @@ Date: 22/09/2022
 > https://hongjchang.github.io/Week9Homework/
 
 #### Current Progress:
-> Map completed but __**data not shown**__.
-> Visualisation idiom planned ---> **proportional symbol map**
-> **NEVER MODIFY THE `BEFORErainfall_weather_aus.vg.json` FILE!**
+> - Map completed but __**data not shown**__.
+> - Visualisation idiom planned ---> **proportional symbol map**
+> - **NEVER MODIFY THE `BEFORErainfall_weather_aus.vg.json` FILE!**
+> - To find the submitted version, it is Commit9.
 
 #### Notes:
 > - All map topojson files are using 1:50m physical and 1 cultural for states and provinces which obtained from https://www.naturalearthdata.com.
