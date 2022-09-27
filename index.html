@@ -24,13 +24,13 @@
 <body>
     <h1>A Map Showing the Total Rainfall in Australia</h1>
 
-    <br/>
+    <!--<br/>
     <h3><b>Before the Week9 Homework Deadline / Submitted Version (before 25/09/2022)</b></h3>
     <div id="visualisation1"></div>
 
     <br/><br/>
-    <h3><b>After the Deadline / Modified After the Submitted Version (as of 26/09/2022)</b></h3>
-    <div id="visualisation2"></div>
+    <h3><b>After the Deadline / Modified After the Submitted Version (as of 26/09/2022)</b></h3>-->
+    <div id="visualisation"></div>
 
     <script type="text/javascript">
         var spec1 = "js/BEFORErainfall_weather_aus.vg.json"
@@ -42,7 +42,7 @@
     <script type="text/javascript">
         var spec2 = "js/AFTERrainfall_weather_aus.vg.json"
 
-        vegaEmbed('#visualisation2', spec2).then(function(result) {
+        vegaEmbed('#visualisation', spec2).then(function(result) {
         }).catch(console.error);
     </script>
 </body>

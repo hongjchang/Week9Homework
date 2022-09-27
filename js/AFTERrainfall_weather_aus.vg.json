@@ -13,53 +13,58 @@
             "feature": "ne_50m_admin_1_states_provinces"
           }
         },
-        "mark": {"type": "geoshape", "stroke": "lightgrey", "fill": "white"}
-      }
-    ],
-    "data": {
-      "url": "https://raw.githubusercontent.com/hongjchang/Week9Homework/main/datasets/weatherAUS_lesserDataForHomework.csv"
-    },
-    "mark": {"type": "circle", "tooltip": {"content": "data"}},
-    "encoding": {
-      "latitude": {"field": "Lat", "type": "quantitative"},
-      "longitude": {"field": "Lon", "type": "quantitative"},
-      "size": {
-        "field": "Rainfall",
-        "type": "quantitative",
-        "title": "Rainfall (mm)",
-        "scale": {"domain": [0, 10]}
+        "mark": {"type": "geoshape", "stroke": "black", "strokeOpacity": 0.4, "fill": "white"}
       },
-      "color": {
-        "field": "State",
-        "type": "nominal",
-        "title": "State",
-        "scale": {
-          "domain": [
-            "Australian Capital Territory",
-            "New South Wales",
-            "Northern Territory",
-            "Queensland",
-            "Southern Australia",
-            "Tasmania",
-            "Victoria",
-            "Western Australia"
-          ],
-          "range": [
-            "#b2182b",
-            "#d6604d",
-            "#f4a582",
-            "#fddbc7",
-            "#d1e5f0",
-            "#92c5de",
-            "#4393c3",
-            "#2166ac"
+      {
+        "data": {
+          "url": "https://raw.githubusercontent.com/hongjchang/Week9Homework/main/datasets/weatherAUS_lesserDataForHomework.csv"
+        },
+        "mark": {"type": "circle", "tooltip": {"content": "data"}},
+        "encoding": {
+          "latitude": {"field": "Lat", "type": "quantitative"},
+          "longitude": {"field": "Lon", "type": "quantitative"},
+          "size": {
+            "field": "Rainfall",
+            "type": "quantitative",
+            "title": "Rainfall (mm)",
+            "scale": {"domain": [0.0, 10.0]}
+          },
+          "color": {
+            "field": "State",
+            "type": "nominal",
+            "title": "State",
+            "scale": {
+              "scheme": "reds",
+              "domain": [
+                "ACT",
+                "NSW",
+                "NT",
+                "QLD",
+                "SA",
+                "TAS",
+                "VIC",
+                "WA",
+                ""
+              ],
+              "range": [
+                "#b2182b",
+                "#d6604d",
+                "#f4a582",
+                "#fddbc7",
+                "#f7f7f7",
+                "#d1e5f0",
+                "#92c5de",
+                "#4393c3",
+                "#2166ac"
+              ]
+            }
+          },
+          "tooltip": [
+            {"field": "Date", "type": "ordinal", "title": "Date:"},
+            {"field": "Location", "type": "ordinal", "title": "City:"},
+            {"field": "Rainfall", "type": "quantitative", "title": "Rainfall:"}
           ]
         }
-      },
-      "tooltip": [
-        {"field": "Date", "type": "quantitative", "title": "Date:"},
-        {"field": "Location", "type": "ordinal", "title": "City:"},
-        {"field": "Rainfall", "type": "quantitative", "title": "Rainfall:"}
-      ]
-    }
+      }
+    ]
   }
