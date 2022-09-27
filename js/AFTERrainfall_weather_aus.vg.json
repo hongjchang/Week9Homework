@@ -13,7 +13,7 @@
             "feature": "ne_50m_admin_1_states_provinces"
           }
         },
-        "mark": {"type": "geoshape", "stroke": "black", "strokeOpacity": 0.4, "fill": "white"}
+        "mark": {"type": "geoshape", "stroke": "black", "strokeOpacity": 0.4, "fill": "grey", "fillOpacity": 0.4}
       },
       {
         "data": {
@@ -46,17 +46,7 @@
                 "WA",
                 ""
               ],
-              "range": [
-                "#b2182b",
-                "#d6604d",
-                "#f4a582",
-                "#fddbc7",
-                "#f7f7f7",
-                "#d1e5f0",
-                "#92c5de",
-                "#4393c3",
-                "#2166ac"
-              ]
+              "range": ["#d73027", "#f46d43", "#fdae61", "#fee090", "#ffffbf", "#e0f3f8", "#abd9e9", "#74add1", "#4575b4"]
             }
           },
           "tooltip": [
